@@ -13,11 +13,11 @@ public class testController {
     @Autowired
     private TestRepository testRepository;
 
-    @GetMapping("/")
+    @GetMapping("/register")
     @Transactional
     public ModelAndView home() {
         testRepository.addUser(new User());
-        ModelAndView mav = new ModelAndView("login");
+        ModelAndView mav = new ModelAndView("register");
 //        mav.addObject("message", "Welcome to Spring 6 MVC with JPA and JSP!");
         return mav;
     }

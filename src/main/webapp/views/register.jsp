@@ -58,7 +58,7 @@
     <label>Name : </label>
     <input type="text" placeholder="Enter Ur name" name="name" required>
     <label>Email : </label>
-    <input type="email" placeholder="Enter email" name="email" required>
+    <input type="text" placeholder="Enter email" name="email" required>
     <label>Password : </label>
     <input type="password" placeholder="Enter Password" name="password" required>
     <label>Phone : </label>
