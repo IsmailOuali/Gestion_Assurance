@@ -12,7 +12,16 @@ public class Contrat {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client Client;
+
+    @OneToOne
+    @JoinColumn(name = "devis_id")
+    private Devis devis;
     protected LocalDate date;
+    protected LocalTime expirationDate;
     protected Boolean status;
 
 
@@ -35,6 +44,27 @@ public class Contrat {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+
+    public Client getClient() {
+        return Client;
+    }
+    public void setClient(Client client) {
+        Client = client;
+    }
+    public Devis getDevis() {
+        return devis;
+    }
+    public void setDevis(Devis devis) {
+        this.devis = devis;
+    }
+    public LocalTime getExpirationDate() {
+        return expirationDate;
+    }
+    public void setExpirationDate(LocalTime expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+
     public Boolean getStatus() {
         return status;
     }
