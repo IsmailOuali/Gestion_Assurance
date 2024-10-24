@@ -4,6 +4,7 @@ import com.assurance.model.Client;
 import com.assurance.repository.interfaces.ClientRepository;
 import com.assurance.services.interfaces.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +21,9 @@ public class ClientServiceImpl implements ClientService {
         this.clientRepository = clientRepository;
     }
 
+
+
+
     @Override
     public Client createClient(Client client) {
         return clientRepository.save(client);
@@ -28,7 +32,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Client getClientById(UUID id) {
         Optional<Client> client = clientRepository.findById(id);
-        return client.orElse(null);  // Handle the case where the client might not exist
+        return client.orElse(null);
     }
 
     @Override

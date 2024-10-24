@@ -1,5 +1,6 @@
-package com.assurance.model;
+package com.assurance.repository.implementations;
 
+import com.assurance.model.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
