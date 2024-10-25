@@ -58,4 +58,18 @@ public class ClientServiceImpl implements ClientService {
         }
         return null;
     }
+
+    @Override
+    public Client findByName(String name) {
+        return null;
+    }
+
+    @Override
+    public boolean authenticateUser(String username, String password) {
+        Client client = clientRepository.findByName(username); // Assuming findByName returns a Client object
+
+        // Check if client exists and if the password matches
+        return client != null && client.getPassword().equals(password);
+    }
+
 }
