@@ -2,8 +2,10 @@ package com.assurance.controller;
 
 import com.assurance.services.interfaces.ClientService;
 import com.assurance.model.Client;
+import jakarta.enterprise.inject.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,7 +21,6 @@ public class ClientController {
                                        @RequestParam("email") String email,
                                        @RequestParam("password") String password,
                                        @RequestParam("phone") String phone) {
-        // Create a new client object
         Client client = new Client();
         client.setName(name);
         client.setEmail(email);
@@ -27,10 +28,27 @@ public class ClientController {
         client.setTelephone(phone);
 
 
-        // Call the service to save the client
-        clientService.createClient(client); // Implement this method in your service
+        clientService.createClient(client);
 
-        // Return a success view or redirect
-        return new ModelAndView("registrationSuccess"); // Create a JSP page for success
+        return new ModelAndView("registrationSuccess");
     }
+
+    @PostMapping("/login")
+    public String login(@RequestParam("username") String username,
+                        @RequestParam("password") String password,
+                        Model model) {
+        // Logic to authenticate the user
+        if (clientService.authenticateUser(username, password)) {
+            // Redirect to the dashboard or success page
+            return "redirect:/registrationSuccess";
+        } else {
+            return "login"; // Return to the login page with an error
+        }
+    }
+
+    @GetMapping("/login")
+    public String showLoginForm() {
+        return "login"; // Return the login JSP
+    }
+
 }

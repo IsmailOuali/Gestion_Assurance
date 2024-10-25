@@ -11,4 +11,8 @@ public interface ClientService {
     List<Client> getAllClients();
     void deleteClient(UUID id);
     Client updateClient(UUID id, Client client);
+    Client findByName(String name);
+    boolean authenticateUser(String username, String password);
+
+
 }
