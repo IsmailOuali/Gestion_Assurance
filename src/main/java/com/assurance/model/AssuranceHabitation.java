@@ -1,8 +1,10 @@
 package com.assurance.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "assurance_habitation")
 public class AssuranceHabitation extends Assurance {
 
     private double valeurBien;

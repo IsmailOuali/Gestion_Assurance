@@ -37,7 +37,15 @@
         </property>
     </bean>
 
-<!--     Transaction Manager -->
+
+
+    <bean id="clientRepository" class="com.assurance.repository.implementations.ClientRepositoryImpl" abstract="true"/>
+
+    <bean id="clientService" class="com.assurance.services.implementations.ClientServiceImpl">
+        <constructor-arg ref="clientRepository"/>
+    </bean>
+
+    <!--     Transaction Manager -->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>

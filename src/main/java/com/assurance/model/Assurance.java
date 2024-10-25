@@ -5,6 +5,7 @@ import java.util.UUID;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "assurances")
 public abstract class Assurance {
 
     @Id
@@ -22,8 +23,8 @@ public abstract class Assurance {
     public UUID getId() { return id; }
     public void setId(UUID id) { this.id = id; }
 
-    public Client getUtilisateur() { return client; }
-    public void setUtilisateur(Client utilisateur) { this.client = utilisateur; }
+    public Client getClient() { return client; }
+    public void setClient(Client client) { this.client = client; }
 
     public String getTypeAssurance() { return typeAssurance; }
     public void setTypeAssurance(String typeAssurance) { this.typeAssurance = typeAssurance; }
