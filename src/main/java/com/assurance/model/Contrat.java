@@ -28,7 +28,7 @@ public class Contrat {
     public Contrat() {
 
     }
-    public Contrat(LocalDate date, Boolean status) {
+    public Contrat(Client client, Devis devis ,LocalDate date, Boolean status) {
         this.date = date;
         this.status = status;
     }
