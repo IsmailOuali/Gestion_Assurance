@@ -50,6 +50,7 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
+    <bean id="calculateurDevis" class="com.assurance.services.implementations.CalculateurDevis" />
 
     <context:component-scan base-package="com.assurance" />
     <!-- Enable JPA Repositories -->
