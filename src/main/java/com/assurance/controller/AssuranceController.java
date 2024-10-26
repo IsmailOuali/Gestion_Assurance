@@ -1,4 +1,4 @@
-package com.assurance.controllers;
+package com.assurance.controller;
 
 import com.assurance.model.AssuranceSante;
 import com.assurance.model.AssuranceAutomobile;
