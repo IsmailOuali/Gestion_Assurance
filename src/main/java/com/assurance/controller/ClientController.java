@@ -42,13 +42,13 @@ public class ClientController {
             // Redirect to the dashboard or success page
             return "redirect:/registrationSuccess";
         } else {
-            return "login"; // Return to the login page with an error
+            return "login";
         }
     }
 
     @GetMapping("/login")
     public String showLoginForm() {
-        return "login"; // Return the login JSP
+        return "login";
     }
 
 }

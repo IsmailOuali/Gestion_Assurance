@@ -53,7 +53,7 @@
 </head>
 <body>
 <center> <h1> Assurance Login Form </h1> </center>
-<form>
+<form action="registerClient" method="post">
   <div class="container">
     <label>Name : </label>
     <input type="text" placeholder="Enter Ur name" name="name" required>

@@ -11,6 +11,11 @@ public class AssuranceSante extends Assurance {
     private boolean antecedentsMedicaux;
     private String typeCouverture; // de base, premium
 
+    public AssuranceSante() {
+        this.setTypeAssurance("Sante");
+    }
+
+
     // Getters et setters
 
     public int getAge() { return age; }

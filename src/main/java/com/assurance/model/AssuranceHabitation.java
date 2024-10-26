@@ -12,6 +12,10 @@ public class AssuranceHabitation extends Assurance {
     private boolean zoneRisque;
     private boolean systemeSecurite;
 
+    public AssuranceHabitation() {
+        this.setTypeAssurance("Habitation");
+    }
+
     // Getters et setters
 
     public double getValeurBien() { return valeurBien; }

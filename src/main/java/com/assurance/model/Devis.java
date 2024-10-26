@@ -23,6 +23,11 @@ public class Devis {
 
     private String etat; // "En attente", "Accepté", "Refusé"
 
+
+    public Devis(double montantEstime) {
+        this.montantEstime = montantEstime;
+    }
+
     // Getters et setters
     public UUID getId() { return id; }
     public void setId(UUID id) { this.id = id; }

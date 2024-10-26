@@ -12,6 +12,11 @@ public class AssuranceAutomobile extends Assurance {
     private String utilisation; // privée, professionnelle
     private boolean historiqueConduiteSansSinistre;
 
+    public AssuranceAutomobile() {
+        this.setTypeAssurance("Automobile");
+    }
+
+
     // Getters et setters
 
     public int getAgeConducteur() { return ageConducteur; }

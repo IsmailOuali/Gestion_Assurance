@@ -1,10 +1,22 @@
 package com.assurance.services.implementations;
 
-import com.assurance.model.AssuranceAutomobile;
-import com.assurance.model.AssuranceHabitation;
-import com.assurance.model.AssuranceSante;
+import com.assurance.model.*;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CalculateurDevis {
+
+    public Devis calculerDevis(AssuranceAutomobile auto){
+        double montant = calculerDevisAutomobile(auto);
+        return new Devis(montant);
+    }
+    public Devis calculerDevis(AssuranceSante sante){
+        double montant = calculerDevisSante(sante);
+        return new Devis(montant);
+    }    public Devis calculerDevis(AssuranceHabitation habitation){
+        double montant = calculerDevisHabitation(habitation);
+        return new Devis(montant);
+    }
 
     public double calculerDevisAutomobile(AssuranceAutomobile auto) {
         double montant = 500;
